@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 project(voxelized_geometry_tools)
 
-find_package(common_robotics_utilities REQUIRED)
 find_package(Eigen3 REQUIRED)
 set(Eigen3_INCLUDE_DIRS ${EIGEN3_INCLUDE_DIR})
 find_package(OpenMP)
@@ -10,6 +9,17 @@ find_package(OpenCL)
 
 ## We don't depend on Drake, but we do use different build flags if present.
 find_package(drake QUIET)
+
+# =============================================================================
+# common_robotics_utilities
+# =============================================================================
+# Include the following if you've installed common_robotics_utilities
+# find_package(common_robotics_utilities REQUIRED)
+
+# Else, include this if you're adding it as a subdirectory
+# add_subdirectory(common_robotics_utilities)
+# include_directories(${common_robotics_utilities_SOURCE_DIR}/include)
+# =============================================================================
 
 ###########
 ## Build ##
